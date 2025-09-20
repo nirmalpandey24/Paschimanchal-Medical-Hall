@@ -52,10 +52,10 @@ export default async function DoctorsPage() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <div className="space-y-3">
-                    <div className="flex items-center text-sm text-gray-600">
+                    {/* <div className="flex items-center text-sm text-gray-600">
                       <GraduationCap className="h-4 w-4 mr-2 text-blue-600" />
                       <span>{doctor.years_experience} years experience</span>
-                    </div>
+                    </div> */}
 
                     {doctor.education && (
                       <div className="flex items-start text-sm text-gray-600">
@@ -65,18 +65,18 @@ export default async function DoctorsPage() {
                     )}
 
                     <div className="flex flex-col gap-2 pt-2">
-                      {doctor.phone && (
-                        <div className="flex items-center text-sm text-gray-600">
-                          <Phone className="h-4 w-4 mr-2 text-blue-600" />
-                          <span>{doctor.phone}</span>
-                        </div>
-                      )}
-                      {doctor.email && (
+                      {/* {doctor.phone && (
+                        // <div className="flex items-center text-sm text-gray-600">
+                        //   <Phone className="h-4 w-4 mr-2 text-blue-600" />
+                        //   <span>{doctor.phone}</span>
+                        // </div>
+                      )} */}
+                      {/* {doctor.email && (
                         <div className="flex items-center text-sm text-gray-600">
                           <Mail className="h-4 w-4 mr-2 text-blue-600" />
                           <span className="truncate">{doctor.email}</span>
                         </div>
-                      )}
+                      )} */}
                     </div>
 
                     <div className="pt-4 space-y-2">

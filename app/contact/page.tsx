@@ -39,13 +39,13 @@ export default function ContactPage() {
                 <CardContent>
                   <div className="space-y-2">
                     <p>
-                      <strong>Main Line:</strong> (555) 123-CARE
+                      <strong>Main Line:</strong> 9851197512
                     </p>
                     <p>
-                      <strong>Emergency:</strong> (555) 911-HELP
+                      <strong>Emergency:</strong> 014980049
                     </p>
                     <p>
-                      <strong>Appointments:</strong> (555) 123-4567
+                      {/* <strong>Appointments:</strong> (555) 123-4567 */}
                     </p>
                   </div>
                 </CardContent>
@@ -61,14 +61,14 @@ export default function ContactPage() {
                 <CardContent>
                   <div className="space-y-2">
                     <p>
-                      <strong>General Info:</strong> info@medicalcenter.com
+                      <strong>General Info:</strong> info@paschimanchalmedicalhall.com.np
                     </p>
-                    <p>
-                      <strong>Appointments:</strong> appointments@medicalcenter.com
-                    </p>
-                    <p>
+                    {/* <p>
+                      <strong>Appointments:</strong> appointments@paschimanchalmedicalhall.com.np
+                    </p> */}
+                    {/* <p>
                       <strong>Billing:</strong> billing@medicalcenter.com
-                    </p>
+                    </p> */}
                   </div>
                 </CardContent>
               </Card>
@@ -77,14 +77,13 @@ export default function ContactPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <MapPin className="h-5 w-5 text-blue-600 mr-2" />
-                    Location
+                    Our Location
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    <p>123 Medical Drive</p>
-                    <p>Healthcare City, HC 12345</p>
-                    <p>United States</p>
+                    <p>Kathmandu, Nepal</p>
+                    <p>Nayabazar-17, Medical Chowk</p>
                   </div>
                 </CardContent>
               </Card>
@@ -115,18 +114,23 @@ export default function ContactPage() {
               </Card>
             </div>
 
-            {/* Map Placeholder */}
+            {/* Map Section */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Find Us</h2>
-              <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-600">Interactive Map</p>
-                  <p className="text-sm text-gray-500">123 Medical Drive, Healthcare City</p>
-                </div>
+              <div className="overflow-hidden rounded-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.1506000000003!2d85.3003449!3d27.7195397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19f92bb1578b%3A0x32fbd6dd7e6d4125!2sPaschimanchal%20Medical%20Hall!5e0!3m2!1sen!2snp!4v1620000000000!5m2!1sen!2snp"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-lg"
+                ></iframe>
               </div>
 
-              <div className="mt-6 space-y-4">
+              {/* <div className="mt-6 space-y-4">
                 <h3 className="text-xl font-semibold text-gray-900">Directions</h3>
                 <div className="space-y-2 text-gray-600">
                   <p>
@@ -139,7 +143,7 @@ export default function ContactPage() {
                     <strong>Parking:</strong> Free parking available in our main lot and parking garage
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

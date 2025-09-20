@@ -10,40 +10,39 @@ export function Navigation() {
 
   return (
     <nav className="bg-white shadow-sm border-b">
-      {/* Top bar with contact info */}
       <div className="bg-blue-900 text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>(555) 123-CARE</span>
+                <span>9851197512</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>info@medicalcenter.com</span>
+                <a href="mailto:info@paschimanchalmedicalhall.com.np" className="hover:underline">
+                  info@paschimanchalmedicalhall.com.np
+                </a>
               </div>
             </div>
             <div className="hidden md:block">
-              <span>Emergency: (555) 911-HELP</span>
+              <span>Emergency: 9841630190</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">MC</span>
+              <div className="w-12 h-12  rounded-full flex items-center justify-center">
+                <img src="/logo.png" alt="" />
               </div>
-              <span className="font-bold text-xl text-gray-900">MedicalCenter</span>
+              <span className="font-bold text-xl text-gray-900">Paschimanchal Medical Hall</span>
             </Link>
           </div>
 
-          {/* Desktop navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <Link

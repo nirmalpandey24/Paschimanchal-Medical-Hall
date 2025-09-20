@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Heart, Shield, Users, Clock, Star, CheckCircle } from "lucide-react"
+import { Heart, Shield, Users, Clock, Star, CheckCircle, ArrowLeft, ArrowRight } from "lucide-react"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 export default function HomePage() {
   return (
@@ -42,18 +43,40 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-            <div className="relative">
-              <img
-                src="/modern-medical-facility-with-doctors-and-patients.jpg"
-                alt="Medical professionals providing care"
-                className="rounded-lg shadow-2xl"
-              />
+            <div className="relative w-full max-w-2xl mx-auto">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {[
+                    { src: "/one.jpg", alt: "Medical professionals providing care" },
+                    { src: "/two.jpg", alt: "Medical team in modern hospital setting" },
+                    { src: "/three.jpg", alt: "Modern medical center building exterior" },
+                    // { src: "/modern-medical-facility-with-doctors-and-patients.jpg", alt: "Modern medical facility with doctors and patients" },
+                  ].map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="relative aspect-video overflow-hidden rounded-lg shadow-2xl">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-4 top-1/2 -translate-y-1/2" />
+                <CarouselNext className="right-4 top-1/2 -translate-y-1/2" />
+              </Carousel>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

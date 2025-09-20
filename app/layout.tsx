@@ -6,13 +6,18 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "MedicalCenter - Professional Healthcare Services",
+  title: "Paschimanchal Medical Hall ",
   description:
     "Comprehensive medical care with experienced professionals. Book appointments, meet our doctors, and access quality healthcare services.",
   generator: "v0.app",
   keywords: "medical, healthcare, doctors, appointments, clinic, hospital, medical services",
-  authors: [{ name: "MedicalCenter" }],
+  authors: [{ name: "Paschimanchal Medical Hall" }],
   viewport: "width=device-width, initial-scale=1",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({

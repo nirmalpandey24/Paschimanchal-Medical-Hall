@@ -1,112 +1,204 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { createClient } from "@/lib/supabase/server"
-import { Heart, Bone, Baby, Stethoscope, Shield, Clock } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import {
+  Stethoscope,
+  Video,
+  X,
+  FlaskConical,
+  Heart,
+  Calendar,
+  Clock,
+  MapPin,
+  Phone,
+  Mail,
+  Star,
+  CheckCircle,
+  Users,
+  Shield,
+  Award,
+} from "lucide-react"
 
-const categoryIcons = {
-  Cardiology: Heart,
-  Orthopedics: Bone,
-  Pediatrics: Baby,
-  General: Stethoscope,
-  Dermatology: Shield,
-  Emergency: Clock,
-}
+
 
 export default async function ServicesPage() {
-  const supabase = await createClient()
-  const { data: services } = await supabase.from("services").select("*").order("category", { ascending: true })
+  const services = [
+    {
+      icon: <Stethoscope className="h-8 w-8" />,
+      title: "Doctor Checkups",
+      description: "Comprehensive health examinations with experienced physicians",
+      features: ["General Health Assessment", "Preventive Care", "Health Screening", "Medical Consultation"],
+      price: "Starting from $150",
+    },
+    {
+      icon: <Video className="h-8 w-8" />,
+      title: "Video Consultations",
+      description: "Remote medical consultations from the comfort of your home",
+      features: ["24/7 Availability", "Secure Video Calls", "Digital Prescriptions", "Follow-up Care"],
+      price: "Starting from $75",
+    },
+    {
+      icon: <X className="h-8 w-8" />,
+      title: "X-Ray Services",
+      description: "Advanced digital imaging for accurate diagnosis",
+      features: ["Digital X-Ray", "Same-day Results", "Expert Radiologist Review", "CD/Digital Copies"],
+      price: "Starting from $200",
+    },
+    {
+      icon: <FlaskConical className="h-8 w-8" />,
+      title: "Lab & Pathology",
+      description: "Comprehensive laboratory testing and pathology services",
+      features: ["Blood Tests", "Urine Analysis", "Biopsy Services", "Quick Results"],
+      price: "Starting from $50",
+    },
+    {
+      icon: <Heart className="h-8 w-8" />,
+      title: "Cardiology",
+      description: "Specialized heart care and cardiovascular health services",
+      features: ["ECG Testing", "Heart Monitoring", "Cardiac Consultation", "Preventive Care"],
+      price: "Starting from $300",
+    },
+    {
+      icon: <Users className="h-8 w-8" />,
+      title: "Family Medicine",
+      description: "Comprehensive healthcare for patients of all ages",
+      features: ["Pediatric Care", "Adult Medicine", "Geriatric Care", "Family Planning"],
+      price: "Starting from $120",
+    },
+  ]
 
-  // Group services by category
-  const servicesByCategory =
-    services?.reduce(
-      (acc, service) => {
-        const category = service.category || "General"
-        if (!acc[category]) {
-          acc[category] = []
-        }
-        acc[category].push(service)
-        return acc
-      },
-      {} as Record<string, typeof services>,
-    ) || {}
-
+  const testimonials = [
+    {
+      name: "Sanjay Shrestha",
+      rating: 5,
+      comment: "Excellent service and caring staff. The video consultation was very convenient!",
+    },
+    {
+      name: "Pratik Gurung",
+      rating: 5,
+      comment: "Quick lab results and professional service. Highly recommend this clinic.",
+    },
+    {
+      name: "Binod Adhikari",
+      rating: 5,
+      comment: "The doctors are knowledgeable and take time to explain everything clearly.",
+    },
+  ]
+  
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Medical Services</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Comprehensive healthcare services delivered by our team of experienced medical professionals using the
-              latest technology and treatment methods.
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance">
+              Comprehensive Healthcare Services
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8 text-pretty">
+              From routine checkups to specialized care, we provide quality healthcare services with modern technology
+              and compassionate care.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="text-lg px-8">
+                <Calendar className="mr-2 h-5 w-5" />
+                Book Appointment
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
+                <Video className="mr-2 h-5 w-5" />
+                Video Consultation
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {Object.entries(servicesByCategory).map(([category, categoryServices]) => {
-            const IconComponent = categoryIcons[category as keyof typeof categoryIcons] || Stethoscope
+      <section id="services" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Medical Services</h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We offer a comprehensive range of medical services to meet all your healthcare needs
+            </p>
+          </div>
 
-            return (
-              <div key={category} className="mb-16">
-                <div className="flex items-center mb-8">
-                  <IconComponent className="h-8 w-8 text-blue-600 mr-3" />
-                  <h2 className="text-3xl font-bold text-gray-900">{category}</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {categoryServices.map((service) => (
-                    <Card key={service.id} className="hover:shadow-lg transition-shadow">
-                      <CardHeader>
-                        <CardTitle className="text-xl">{service.name}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-gray-600 mb-4">{service.description}</p>
-                        <div className="flex justify-between items-center mb-4">
-                          <div>
-                            <p className="text-2xl font-bold text-blue-600">${service.price}</p>
-                            <p className="text-sm text-gray-500">{service.duration_minutes} minutes</p>
-                          </div>
-                        </div>
-                        <Button asChild className="w-full">
-                          <Link href="/book-appointment">Book Now</Link>
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            )
-          })}
+        
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Need Help Choosing a Service?</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Our medical professionals are here to help you determine the best treatment plan for your specific needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link href="/book-appointment">Schedule Consultation</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose HealthCare Plus?</h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We are committed to providing exceptional healthcare with modern facilities and experienced professionals
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mx-auto mb-4">
+                <Shield className="h-8 w-8 text-primary" />
+              </div>
+              <h4 className="text-xl font-semibold text-foreground mb-2">Trusted Care</h4>
+              <p className="text-muted-foreground">
+                Over 20 years of experience providing quality healthcare services to our community
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mx-auto mb-4">
+                <Award className="h-8 w-8 text-primary" />
+              </div>
+              <h4 className="text-xl font-semibold text-foreground mb-2">Expert Doctors</h4>
+              <p className="text-muted-foreground">
+                Board-certified physicians and specialists dedicated to your health and wellbeing
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mx-auto mb-4">
+                <Clock className="h-8 w-8 text-primary" />
+              </div>
+              <h4 className="text-xl font-semibold text-foreground mb-2">24/7 Support</h4>
+              <p className="text-muted-foreground">
+                Round-the-clock emergency services and telemedicine consultations available
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What Our Patients Say</h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Read testimonials from our satisfied patients who trust us with their healthcare
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index}>
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4 italic">"{testimonial.comment}"</p>
+                  <p className="font-semibold text-foreground">- {testimonial.name}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+   
 
       <Footer />
     </div>

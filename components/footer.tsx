@@ -9,10 +9,11 @@ export function Footer() {
           {/* Logo and description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">MC</span>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                {/* <span className="text-white font-bold text-sm">MC</span> */}
+                {/* <img src="/logo.png" alt="" className="rounded-full w-12 h-12" /> */}
               </div>
-              <span className="font-bold text-xl">MedicalCenter</span>
+              <span className="font-bold text-xl">Paschimanchal Medical Center</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Providing exceptional healthcare services with compassion, expertise, and cutting-edge medical technology.
@@ -21,11 +22,11 @@ export function Footer() {
             <div className="flex space-x-4">
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="h-4 w-4 text-blue-400" />
-                <span>(555) 123-CARE</span>
+                <span>9851197512</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4 text-blue-400" />
-                <span>info@medicalcenter.com</span>
+                <span>info@paschimanchalmedicalhall.com.np</span>
               </div>
             </div>
           </div>
@@ -69,8 +70,8 @@ export function Footer() {
               <div className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5" />
                 <div>
-                  <p className="text-gray-300">123 Medical Drive</p>
-                  <p className="text-gray-300">Healthcare City, HC 12345</p>
+                  <p className="text-gray-300">Kathmandu, Nepal</p>
+                  <p className="text-gray-300">Nayabazar-17 , Medical Chowk</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
