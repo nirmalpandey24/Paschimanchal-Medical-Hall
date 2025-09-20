@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { VideoConsultationForm } from "@/components/video-consultation-form"
 import {
   Stethoscope,
   Video,
@@ -105,10 +106,7 @@ export default async function ServicesPage() {
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Appointment
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
-                <Video className="mr-2 h-5 w-5" />
-                Video Consultation
-              </Button>
+              <VideoConsultationForm />
             </div>
           </div>
         </div>
