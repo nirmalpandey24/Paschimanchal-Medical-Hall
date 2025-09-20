@@ -33,7 +33,7 @@ export default async function DoctorsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {doctors?.map((doctor) => (
-              <Card key={doctor.id} className="hover:shadow-lg transition-shadow overflow-hidden">
+              <Card key={doctor.id} className="shadow-none py-0 pb-4 hover:shadow-none transition-shadow overflow-hidden">
                 <div className="aspect-square relative overflow-hidden">
                   <img
                     src={doctor.image_url || "/placeholder.svg?height=400&width=400"}

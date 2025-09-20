@@ -39,7 +39,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <img src="/medical-team-in-modern-hospital-setting.jpg" alt="Medical team" className="rounded-lg shadow-lg" />
+              <img src="/mission.png" alt="Medical team" className="rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img src="/modern-medical-center-building-exterior.jpg" alt="MedicalCenter building" className="rounded-lg shadow-lg" />
+              <img src="/two.jpg" alt="MedicalCenter building" className="rounded-lg shadow-lg" />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our History</h2>

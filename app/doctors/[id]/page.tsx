@@ -155,7 +155,7 @@ export default async function DoctorProfilePage({ params }: DoctorProfilePagePro
                   <CardTitle>Contact Information</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {doctor.phone && (
+                  {/* {doctor.phone && (
                     <div className="flex items-center">
                       <Phone className="h-4 w-4 text-blue-600 mr-3" />
                       <div>
@@ -163,8 +163,8 @@ export default async function DoctorProfilePage({ params }: DoctorProfilePagePro
                         <p className="text-gray-600">{doctor.phone}</p>
                       </div>
                     </div>
-                  )}
-                  {doctor.email && (
+                  )} */}
+                  {/* {doctor.email && (
                     <div className="flex items-center">
                       <Mail className="h-4 w-4 text-blue-600 mr-3" />
                       <div>
@@ -172,7 +172,7 @@ export default async function DoctorProfilePage({ params }: DoctorProfilePagePro
                         <p className="text-gray-600 break-all">{doctor.email}</p>
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </CardContent>
               </Card>
 
